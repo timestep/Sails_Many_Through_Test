@@ -1,23 +1,24 @@
 /**
-* Permission.js
+* Role.js
 *
 * @description :: TODO: You might write a short summary of how this model works and what it represents here.
 * @docs        :: http://sailsjs.org/#!documentation/models
 */
-// Permission.js
+
+// Role.js
 module.exports = {
-  identity      : 'Permission',
-  tableName     : 'perm_master',
+  identity      : 'Role',
+  tableName     : 'role_master',
   // migrate       : 'safe',
   schema        : true,
   autoPK        : false,
   autoCreatedAt : false,
   autoUpdatedAt : false,
 
-  attributes : {
+  attributes: {
 
     id : {
-      columnName : 'permfk',
+      columnName : 'rolefk',
       type       : 'string',
       required   : true,
       primaryKey : true,
@@ -25,12 +26,11 @@ module.exports = {
       uuidv4     : true
     },
 
-    // A Permission can belong to many roles using the roleperm model
-    roles : {
-      collection: 'role',
+    // A Role can have many permissions through the roleperm model
+    permissions : {
+      collection : 'permission',
       through: 'roleperm'
     }
 
   }
-
 };
