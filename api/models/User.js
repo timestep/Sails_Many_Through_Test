@@ -5,10 +5,22 @@
 * @docs        :: http://sailsjs.org/#!documentation/models
 */
 
+
 module.exports = {
+
+  tableName:'user',
 
   attributes: {
 
+    email: 'STRING',
+    password: 'STRING',
+
+    cells: {
+      collection: 'item',
+	    via: 'cells',
+	    through:'usercell'
+		}
+
   }
-};
+}
 

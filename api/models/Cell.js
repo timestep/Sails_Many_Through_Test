@@ -6,9 +6,20 @@
 */
 
 module.exports = {
-
+	
+	tableName:'cell',
+  
   attributes: {
 
+	  name: 'STRING',
+
+    users: {
+      collection: 'user',
+	    via: 'cells',
+	    through:'usercell'
+		}
+
   }
-};
+
+}
 
