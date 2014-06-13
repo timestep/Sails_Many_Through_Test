@@ -8,15 +8,19 @@
 module.exports = {
 
   tableName: 'permission',
+  
   tables: ['user', 'item'],
+
   junctionTable: true,
 
   attributes: {
+  
     id: {
       primaryKey: true,
       autoIncrement: true,
       type: 'integer'
     },
+  
     user_cells: {
       columnName: 'user_cells',
       type: 'integer',
@@ -26,6 +30,7 @@ module.exports = {
       via: 'cell_users',
       groupBy: 'user'
     },
+  
     cell_users: {
       columnName: 'cell_users',
       type: 'integer',
@@ -35,7 +40,9 @@ module.exports = {
       via: 'user_cells',
       groupBy: 'cell'
     },
+  
     permission: 'string'
+  
   }
 };
 
