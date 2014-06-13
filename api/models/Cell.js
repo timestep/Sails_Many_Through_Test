@@ -6,18 +6,18 @@
 */
 
 module.exports = {
-	
-	tableName:'cell',
+  
+  tableName:'cell',
   
   attributes: {
 
-	  name: 'STRING',
+    name: 'STRING',
 
     users: {
       collection: 'user',
-	    via: 'cells',
-	    through:'usercell'
-		}
+      via: 'cells',
+      through:'usercell'
+    }
 
   }
 

@@ -17,9 +17,9 @@ module.exports = {
 
     cells: {
       collection: 'item',
-	    via: 'cells',
-	    through:'usercell'
-		}
+      via: 'cells',
+      through:'usercell'
+    }
 
   }
 }
